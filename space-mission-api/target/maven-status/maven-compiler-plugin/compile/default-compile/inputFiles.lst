@@ -1,0 +1,15 @@
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/repository/AlertaRepository.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/controller/SensorController.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/repository/EventoOperacionalRepository.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/service/EventoOperacionalService.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/service/SensorService.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/config/GlobalExceptionHandler.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/controller/EventoOperacionalController.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/model/Sensor.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/model/EventoOperacional.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/config/WebConfig.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/controller/AlertaController.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/SpaceMissionApplication.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/model/Alerta.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/repository/SensorRepository.java
+/Users/celsofernandoferrersingh/Documents/Claude/Projects/GS_mobiledev/space-mission-api/src/main/java/br/com/fiap/spacemission/service/AlertaService.java
