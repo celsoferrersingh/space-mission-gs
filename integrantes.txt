@@ -1,0 +1,10 @@
+Global Solution FIAP 2026.1 - Advanced Programming And Mobile Dev
+Turma: 3EC - Engenharia da Computação
+
+Integrantes:
+- Celso Fernando Ferrer Singh   RM: 565643
+- Vitor Saccardo da Silva       RM: 555611
+- Ana Luíza Oliveira Dourado    RM: 558793
+
+Repositório GitHub:
+https://github.com/celsoferrersingh/space-mission-gs

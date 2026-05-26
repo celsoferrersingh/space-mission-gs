@@ -1,0 +1,14 @@
+# Java - arquivos compilados
+space-mission-api/target/
+space-mission-api/data/
+*.class
+
+# React Native / Node
+space-mission-app/node_modules/
+space-mission-app/.expo/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
