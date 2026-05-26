@@ -1,0 +1,388 @@
+{
+  "info": {
+    "name": "Space Mission Control API",
+    "description": "Global Solution FIAP 2026.1 - Advanced Programming And Mobile Dev\nIntegrantes: Celso Fernando (RM565643), Vitor Saccardo (RM555611), Ana Luíza Dourado (RM558793)",
+    "_postman_id": "space-mission-gs-2026",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Sensores",
+      "item": [
+        {
+          "name": "GET - Listar todos os sensores",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/sensores",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores"]
+            }
+          }
+        },
+        {
+          "name": "GET - Buscar sensor por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/sensores/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET - Filtrar por status ATIVO",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/sensores?status=ATIVO",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores"],
+              "query": [{ "key": "status", "value": "ATIVO" }]
+            }
+          }
+        },
+        {
+          "name": "POST - Sensor de Temperatura",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/sensores",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Sensor de Temperatura Principal\",\n  \"tipo\": \"TEMPERATURA\",\n  \"modulo\": \"MODULO_PROPULSAO\",\n  \"status\": \"ATIVO\",\n  \"ultimaLeitura\": 87.3,\n  \"unidade\": \"°C\",\n  \"localizacao\": \"Compartimento de propulsão\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Sensor de Pressão",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/sensores",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Sensor de Pressão Cabine\",\n  \"tipo\": \"PRESSAO\",\n  \"modulo\": \"MODULO_SUPORTE_VITAL\",\n  \"status\": \"ATIVO\",\n  \"ultimaLeitura\": 1.013,\n  \"unidade\": \"bar\",\n  \"localizacao\": \"Cápsula de comando\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Módulo de Navegação",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/sensores",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Módulo GPS Orbital\",\n  \"tipo\": \"GPS\",\n  \"modulo\": \"MODULO_NAVEGACAO\",\n  \"status\": \"ATIVO\",\n  \"ultimaLeitura\": 408.5,\n  \"unidade\": \"km\",\n  \"localizacao\": \"Painel de navegação\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Sensor com Falha",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/sensores",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Sensor de Radiação Externo\",\n  \"tipo\": \"RADIACAO\",\n  \"modulo\": \"MODULO_EXTERNO\",\n  \"status\": \"FALHA\",\n  \"ultimaLeitura\": null,\n  \"unidade\": \"mSv\",\n  \"localizacao\": \"Estrutura externa\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "PUT - Atualizar sensor ID 1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/sensores/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores", "1"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Sensor de Temperatura Principal\",\n  \"tipo\": \"TEMPERATURA\",\n  \"modulo\": \"MODULO_PROPULSAO\",\n  \"status\": \"MANUTENCAO\",\n  \"ultimaLeitura\": 92.1,\n  \"unidade\": \"°C\",\n  \"localizacao\": \"Compartimento de propulsão\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Remover sensor ID 1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/sensores/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["sensores", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eventos Operacionais",
+      "item": [
+        {
+          "name": "GET - Listar todos os eventos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/eventos",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos"]
+            }
+          }
+        },
+        {
+          "name": "GET - Buscar evento por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/eventos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET - Filtrar por tipo CRITICO",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/eventos?tipo=CRITICO",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos"],
+              "query": [{ "key": "tipo", "value": "CRITICO" }]
+            }
+          }
+        },
+        {
+          "name": "POST - Lançamento da missão",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/eventos",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sistema\": \"PROPULSAO\",\n  \"descricao\": \"Ignição dos motores principais confirmada. Lançamento nominal.\",\n  \"tipo\": \"NORMAL\",\n  \"operador\": \"Celso Singh\",\n  \"faseMissao\": \"LANCAMENTO\",\n  \"duracaoSegundos\": 180\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Ajuste orbital",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/eventos",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sistema\": \"NAVEGACAO\",\n  \"descricao\": \"Manobra de ajuste de trajetória orbital executada com sucesso.\",\n  \"tipo\": \"NORMAL\",\n  \"operador\": \"Vitor Saccardo\",\n  \"faseMissao\": \"ORBITA\",\n  \"duracaoSegundos\": 45\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Falha na comunicação",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/eventos",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sistema\": \"COMUNICACAO\",\n  \"descricao\": \"Perda temporária de sinal com estação terrestre. Protocolo de contingência ativado.\",\n  \"tipo\": \"CRITICO\",\n  \"operador\": \"Ana Luíza Dourado\",\n  \"faseMissao\": \"ORBITA\",\n  \"duracaoSegundos\": 300\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Manutenção preventiva",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/eventos",
+              "host": ["{{baseUrl}}"],
+              "path": ["eventos"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sistema\": \"SUPORTE_VITAL\",\n  \"descricao\": \"Verificação periódica dos sistemas de suporte vital concluída. Todos os parâmetros normais.\",\n  \"tipo\": \"MANUTENCAO\",\n  \"operador\": \"Celso Singh\",\n  \"faseMissao\": \"ORBITA\",\n  \"duracaoSegundos\": 600\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Alertas",
+      "item": [
+        {
+          "name": "GET - Listar todos os alertas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/alertas",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas"]
+            }
+          }
+        },
+        {
+          "name": "GET - Alertas não resolvidos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/alertas/nao-resolvidos",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas", "nao-resolvidos"]
+            }
+          }
+        },
+        {
+          "name": "GET - Buscar alerta por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/alertas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas", "1"]
+            }
+          }
+        },
+        {
+          "name": "GET - Filtrar alertas CRITICO",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/alertas?nivel=CRITICO",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas"],
+              "query": [{ "key": "nivel", "value": "CRITICO" }]
+            }
+          }
+        },
+        {
+          "name": "POST - Alerta CRITICO temperatura",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/alertas",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nivel\": \"CRITICO\",\n  \"mensagem\": \"Temperatura do motor de propulsão acima do limite crítico de segurança.\",\n  \"sistemaOrigem\": \"SENSOR_TEMP_MOTOR_01\",\n  \"codigoAlerta\": \"ERR_TEMP_001\",\n  \"valorDetectado\": 98.5,\n  \"valorLimite\": 85.0\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Alerta ALTO pressão",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/alertas",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nivel\": \"ALTO\",\n  \"mensagem\": \"Pressão da cabine abaixo do nível recomendado. Verificar vedação.\",\n  \"sistemaOrigem\": \"SENSOR_PRESSAO_CABINE\",\n  \"codigoAlerta\": \"WARN_PRESS_002\",\n  \"valorDetectado\": 0.89,\n  \"valorLimite\": 0.95\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "POST - Alerta MEDIO bateria",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/alertas",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nivel\": \"MEDIO\",\n  \"mensagem\": \"Nível de bateria do módulo auxiliar abaixo de 40%.\",\n  \"sistemaOrigem\": \"MODULO_ENERGIA_AUX\",\n  \"codigoAlerta\": \"WARN_BAT_003\",\n  \"valorDetectado\": 37.2,\n  \"valorLimite\": 40.0\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "PATCH - Resolver alerta ID 1",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/alertas/1/resolver",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas", "1", "resolver"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resolucao\": \"Motor resfriado via sistema auxiliar. Temperatura normalizada para 81°C.\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Remover alerta ID 1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/alertas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["alertas", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
