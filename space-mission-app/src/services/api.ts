@@ -7,7 +7,7 @@ import { Sensor, EventoOperacional, Alerta } from '../types';
 // Para dispositivo físico: use o IP da máquina, ex: http://192.168.1.100:8080
 // Para iOS Simulator: http://localhost:8080
 // =============================================
-const BASE_URL = 'http://10.0.2.2:8080/api';
+const BASE_URL = 'http://localhost:8080/api';
 
 const api = axios.create({
   baseURL: BASE_URL,

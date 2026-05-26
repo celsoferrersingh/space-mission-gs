@@ -1,8 +1,9 @@
+import 'react-native-url-polyfill/auto';
 import React from 'react';
+import { Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
-import { Ionicons } from '@expo/vector-icons';
 
 import DashboardScreen from './src/screens/DashboardScreen';
 import SensoresScreen from './src/screens/SensoresScreen';
@@ -20,46 +21,54 @@ const COLORS = {
   border: '#1e1e3f',
 };
 
+const TabIcon = ({ emoji, focused }: { emoji: string; focused: boolean }) => (
+  <Text style={{ fontSize: 20, opacity: focused ? 1 : 0.5 }}>{emoji}</Text>
+);
+
 export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="light" />
       <Tab.Navigator
-        screenOptions={({ route }) => ({
+        screenOptions={{
           headerStyle: { backgroundColor: COLORS.card, borderBottomColor: COLORS.border, borderBottomWidth: 1 },
           headerTitleStyle: { color: COLORS.text, fontWeight: 'bold' },
           tabBarStyle: { backgroundColor: COLORS.card, borderTopColor: COLORS.border, borderTopWidth: 1 },
           tabBarActiveTintColor: COLORS.accent,
           tabBarInactiveTintColor: COLORS.muted,
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName: keyof typeof Ionicons.glyphMap = 'home';
-            if (route.name === 'Dashboard') iconName = focused ? 'planet' : 'planet-outline';
-            else if (route.name === 'Sensores') iconName = focused ? 'radio' : 'radio-outline';
-            else if (route.name === 'Eventos') iconName = focused ? 'list' : 'list-outline';
-            else if (route.name === 'Alertas') iconName = focused ? 'warning' : 'warning-outline';
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}
+        }}
       >
         <Tab.Screen
           name="Dashboard"
           component={DashboardScreen}
-          options={{ title: '🚀 Missão' }}
+          options={{
+            title: 'Missão',
+            tabBarIcon: ({ focused }) => <TabIcon emoji="🚀" focused={focused} />,
+          }}
         />
         <Tab.Screen
           name="Sensores"
           component={SensoresScreen}
-          options={{ title: '📡 Sensores' }}
+          options={{
+            title: 'Sensores',
+            tabBarIcon: ({ focused }) => <TabIcon emoji="📡" focused={focused} />,
+          }}
         />
         <Tab.Screen
           name="Eventos"
           component={EventosScreen}
-          options={{ title: '📋 Eventos' }}
+          options={{
+            title: 'Eventos',
+            tabBarIcon: ({ focused }) => <TabIcon emoji="📋" focused={focused} />,
+          }}
         />
         <Tab.Screen
           name="Alertas"
           component={AlertasScreen}
-          options={{ title: '⚠️ Alertas' }}
+          options={{
+            title: 'Alertas',
+            tabBarIcon: ({ focused }) => <TabIcon emoji="⚠️" focused={focused} />,
+          }}
         />
       </Tab.Navigator>
     </NavigationContainer>
